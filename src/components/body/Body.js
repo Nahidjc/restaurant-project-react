@@ -1,5 +1,6 @@
 import React from 'react';
-import { Redirect, Route } from 'react-router-dom';
+
+import { Redirect, Route, Switch } from 'react-router-dom';
 import About from './About';
 import Contact from './Contact';
 import Home from './Home';
@@ -9,12 +10,17 @@ const Body = () => {
     return (
 
         <div>
-            <Route path="/" exact component={Home} />
-            <Route path="/menu" exact component={Menu} />
-            <Route path="/about" exact component={About} />
-            <Route path="/contact" exact component={Contact} />
+            <Switch>
+                <Route path="/home" exact component={Home} />
+                <Route path="/menu" exact component={Menu} />
+                <Route path="/about" exact component={About} />
+                <Route path="/contact" exact component={Contact} />
 
-            <Redirect></Redirect>
+                <Redirect from="/" to="/home"></Redirect>
+            </Switch>
+
+
+
         </div>
     );
 };
