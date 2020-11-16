@@ -16,7 +16,7 @@ class Menu extends Component {
         modalOpen: false
     }
     onDishSelect = dish => {
-        console.log(dish);
+        // console.log(dish);
         this.setState({
             selectedDish: dish,
             modalOpen: !this.state.modalOpen
@@ -46,10 +46,11 @@ class Menu extends Component {
             <div className="container">
                 <div className="row">
                     <CardColumns>{menu}</CardColumns>
-                    <Modal isOpen={this.state.modalOpen} onClick={this.toggleModal}>
+                    <Modal isOpen={this.state.modalOpen} >
                         <ModalBody>
                             {dishDetail}
                         </ModalBody>
+
                         <ModalFooter>
                             <Button color="secodary" onClick={this.toggleModal}>
                                 Close
