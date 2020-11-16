@@ -1,10 +1,7 @@
-//import { Component } from "react";
 import React, { Component } from 'react';
-//import DISHES from '../../data/dishes';
 import DishDetail from './DishDetail';
 import MenuItem from "./MenuItem";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, CardColumns } from 'reactstrap';
-//import COMMENTS from '../../data/comments';
 import { connect } from 'react-redux';
 const mapStateToProps = state => {
     console.log("mapStateToProps", state);
