@@ -6,6 +6,7 @@ import Maincomponents from './components/Maincomponents';
 import myStore from './redux/store';
 
 function App() {
+  console.log("APP.JS ", myStore.getState());
   return (
     <div className="App">
       <Provider store={myStore}>
