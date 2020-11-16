@@ -4,7 +4,7 @@ import MenuItem from "./MenuItem";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, CardColumns } from 'reactstrap';
 import { connect } from 'react-redux';
 const mapStateToProps = state => {
-    console.log("mapStateToProps", state);
+    // console.log("mapStateToProps", state);
     return {
         dishes: state.dishes,
         comments: state.comments
