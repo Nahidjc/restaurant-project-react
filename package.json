@@ -20,7 +20,8 @@
     "react-scripts": "3.4.4",
     "reactstrap": "^8.5.1",
     "redux": "^4.0.5",
-    "redux-logger": "^3.0.6"
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
