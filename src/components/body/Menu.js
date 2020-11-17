@@ -4,18 +4,11 @@ import MenuItem from "./MenuItem";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, CardColumns } from 'reactstrap';
 import { connect } from 'react-redux';
 import { ADD_COMMENT } from '../../redux/actiontypes';
+import { addComment } from '../../redux/actionCretors';
 
 const mapDispatchTOProps = dispatch => {
     return {
-        addComment: (dishId, rating, author, comment) => dispatch({
-            type: ADD_COMMENT,
-            payload: {
-                dishId: dishId,
-                author: author,
-                rating: rating,
-                comment: comment
-            }
-        })
+        addComment: (dishId, rating, author, comment) => dispatch(addComment(dishId, rating, author, comment))
     }
 }
 
