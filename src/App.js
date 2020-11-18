@@ -12,6 +12,7 @@ function App() {
       <Provider store={myStore}>
         <BrowserRouter>
           <Maincomponents />
+
         </BrowserRouter>
       </Provider>
     </div>

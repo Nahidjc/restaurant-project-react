@@ -50,6 +50,7 @@ class Menu extends Component {
         if (this.props.dishes.isLoading) {
             return (
                 <Loading></Loading>
+
             );
         }
         else {
