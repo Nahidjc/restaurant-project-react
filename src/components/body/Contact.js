@@ -1,6 +1,17 @@
 import React, { Component } from 'react';
-import { Control, Errors, LocalForm } from 'react-redux-form';
-import { Button, Form, FormGroup, Label, Input, FormText, Col } from 'reactstrap';
+import { connect } from 'react-redux';
+import { actions, Control, Errors, Form, LocalForm } from 'react-redux-form';
+import { Button, FormGroup, Label, Col } from 'reactstrap';
+
+
+const mapDispatchToProps = dispatch => {
+    return {
+        resetFeedbackForm: () => {
+            dispatch(actions.reset('feedback'))
+        }
+    }
+}
+
 
 const required = val => val && val.length;
 const isNumber = val => !isNaN(Number(val));
@@ -10,6 +21,7 @@ class Contact extends Component {
 
     handleSubmit = values => {
         console.log(values);
+        this.props.resetFeedbackForm();
 
     }
     render() {
@@ -21,7 +33,7 @@ class Contact extends Component {
                         <h3>Send Your Feedback</h3>
                     </div>
                     <div className="col-12 ">
-                        <LocalForm onSubmit={values => this.handleSubmit(values)}>
+                        <Form model='feedback' onSubmit={values => this.handleSubmit(values)}>
                             <FormGroup row>
                                 <Label htmlFor="firstname" md={2}>First Name</Label>
                                 <Col md={10}>
@@ -62,7 +74,7 @@ class Contact extends Component {
                                     />
                                     <Errors
                                         className="text-danger"
-                                        model=".lasttname"
+                                        model=".lastname"
                                         show="touched"
                                         messages={
                                             {
@@ -192,7 +204,7 @@ class Contact extends Component {
 
                                 </Col>
                             </FormGroup>
-                        </LocalForm>
+                        </Form>
                     </div>
                 </div>
 
@@ -202,4 +214,4 @@ class Contact extends Component {
 }
 
 
-export default Contact;
+export default connect(null, mapDispatchToProps)(Contact);
